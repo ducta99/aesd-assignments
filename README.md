@@ -1,5 +1,4 @@
-![example workflow]
-https://github.com/OWNER/REPOSITORY/actions/workflows/WORKFLOW-FILE/badge.svg
+![example workflow](https://github.com/OWNER/REPOSITORY/actions/workflows/github-actions/badge.svg)
 # aesd-assignments
 This repo contains public starter source code, scripts, and documentation for Advanced Embedded Software Development (ECEN-5713) and Advanced Embedded Linux Development assignments University of Colorado, Boulder.
 
