@@ -1,4 +1,4 @@
-![Autotest](https://github.com/ducta99/aesd-assignments/actions/workflows/github-actions/badge.svg)
+![Autotest](https://github.com/ducta99/aesd-assignments/actions/workflows/github-actions.yml/badge.svg)
 # aesd-assignments
 This repo contains public starter source code, scripts, and documentation for Advanced Embedded Software Development (ECEN-5713) and Advanced Embedded Linux Development assignments University of Colorado, Boulder.
 
