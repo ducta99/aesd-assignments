@@ -1,3 +1,4 @@
+![Autotest](https://github.com/ducta99/aesd-assignments-ducta99/actions/workflows/github-actions.yml/badge.svg)
 # aesd-assignments
 This repo contains public starter source code, scripts, and documentation for Advanced Embedded Software Development (ECEN-5713) and Advanced Embedded Linux Development assignments University of Colorado, Boulder.
 
@@ -19,7 +20,7 @@ The basis of the automated test implementation for this repository comes from [h
 
 The assignment-autotest directory contains scripts useful for automated testing  Use
 ```
-git submodule init update --recursive
+git submodule update --init --recursive
 ```
 to synchronize after cloning and before starting each assignment, as discussed in the assignment instructions.
 
