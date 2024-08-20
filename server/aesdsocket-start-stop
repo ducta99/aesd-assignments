@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Define the path to the executable and PID file
+DAEMON_PATH="aesdsocket"
+PID_FILE="/var/run/aesdsocket.pid"
+DAEMON_OPTS="-d"
+
+# Define the start-stop-daemon command
+START_STOP_DAEMON="/sbin/start-stop-daemon"
+
+case "$1" in
+    start)
+        echo "Starting aesdsocket..."
+        $START_STOP_DAEMON --start --quiet --background --pidfile $PID_FILE --make-pidfile --exec $DAEMON_PATH -- $DAEMON_OPTS
+        echo "aesdsocket started."
+        ;;
+    stop)
+        echo "Stopping aesdsocket..."
+        $START_STOP_DAEMON --stop --quiet --pidfile $PID_FILE --signal SIGTERM
+        echo "aesdsocket stopped."
+        ;;
+    status)
+        if [ -f $PID_FILE ]; then
+            PID=$(cat $PID_FILE)
+            if ps -p $PID > /dev/null 2>&1; then
+                echo "aesdsocket is running with PID $PID."
+            else
+                echo "aesdsocket is not running, but PID file exists."
+            fi
+        else
+            echo "aesdsocket is not running."
+        fi
+        ;;
+    restart)
+        $0 stop
+        $0 start
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|status|restart}"
+        exit 1
+        ;;
+esac
+
+exit 0
